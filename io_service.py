@@ -24,22 +24,22 @@ def get_cursor(collection, id, valor):
 
 values = {}
 for x in collection.find():
-    values[x['_id']] =  x['valor_atual'] 
+    values[x['_id']] =  0 
 
-while True:
-    #percorre dados da collection
-    for id, valor_atual in values.items():        
-        #pega cursor e espera mudanca de valor_atual
-        cur = get_cursor(
-            db.sensors, 
-            id,
-            valor_atual 
-            )
-        for data in cur:
-            values[x['_id']] = data['valor_atual']   
-            #quando mudou
-            print(data)
-    time.sleep(0.1)
+
+#percorre dados da collection
+for id, valor_atual in values.items():        
+    #pega cursor e espera mudanca de valor_atual
+    cur = get_cursor(
+        db.sensors, 
+        id,
+        valor_atual 
+        )
+    for data in cur:
+        values[x['_id']] = data['valor_atual']   
+        #quando mudou
+        print(data)
+time.sleep(0.1)
 
 
 
