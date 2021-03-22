@@ -4,6 +4,8 @@ import datetime
 client = MongoClient('localhost', 27017)
 
 db = client.test_database
+#db.sensors.drop()
+#db.create_collection('sensors', capped=True, size=1000);
 
 collection = db.sensors
 
@@ -13,7 +15,7 @@ data = [{
         "_id": 1,
         "nome": "Sensor de temperatura da cozinha",
         "id_485": "A",
-        "valor_atual": 20,
+        "valor_atual": 22,
         "aciona_saida": 1,
         "valor_acionamento":18,
         "temperatura_ideal":22,
