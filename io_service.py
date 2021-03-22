@@ -38,7 +38,7 @@ while True:
             id = data['_id']
             #quando mudou
             print(data)
-        time.sleep(0.1)
+    time.sleep(0.1)
 
 
 
