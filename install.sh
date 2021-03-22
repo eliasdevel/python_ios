@@ -14,5 +14,4 @@ mkdir db
 
 chmod 777 -R /data
 
-# TODO criar serviço que inicie o mongodb automático
-mongod
+
