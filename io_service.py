@@ -28,7 +28,7 @@ for x in collection.find():
 
 while True:
     #percorre dados da collection
-    for id, valor_atual in values:        
+    for id, valor_atual in values.items():        
         #pega cursor e espera mudanca de valor_atual
         cur = get_cursor(
             db.sensors, 
