@@ -28,18 +28,12 @@ for x in collection.find():
 
 while True:
     #percorre dados da collection
-    for id, valor_atual in values.items():        
-        #pega cursor e espera mudanca de valor_atual
-        cur = get_cursor(
-            db.sensors, 
-            id,
-            values[id] 
-            )
-        for data in cur:
-            values[id] = data['valor_atual']   
-            #quando mudou
-            print(data)
-time.sleep(3)
+    for item in collection.find():
+        #quando muda valor      
+        if(item['valor_atual'] != values[item['_id']]):
+            print(item);
+            values[item['_id']] = item['valor_atual']
+time.sleep(0.1)
 
 
 
