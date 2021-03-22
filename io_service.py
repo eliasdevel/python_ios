@@ -21,22 +21,22 @@ def get_cursor(collection, id, valor):
     options['await_data'] = True
     cur = collection.find(spec, **options)
     return cur
-    
+
+values = {}
+for x in collection.find():
+    values[x['_id']] =  x['valor_atual'] 
 
 while True:
     #percorre dados da collection
-    for x in collection.find():
-        valor_atual = x['valor_atual']
-        print(x['_id'])
+    for x in collection.find():        
         #pega cursor e espera mudanca de valor_atual
         cur = get_cursor(
             db.sensors, 
             x['_id'],
-            valor_atual 
+            values[x['_id']] 
             )
         for data in cur:
-            valor_atual = data['valor_atual']
-            
+            values[x['_id']] = data['valor_atual']   
             #quando mudou
             print(data)
     time.sleep(0.1)
