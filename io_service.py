@@ -22,19 +22,23 @@ def get_cursor(collection, id, valor):
     cur = collection.find(spec, **options)
     return cur
     
-valor_atual = 20
-id = 1
+
 while True:
-    cur = get_cursor(
-        db.sensors, 
-        id,
-        valor_atual 
-        )
-    for data in cur:
-        valor_atual = data['valor_atual']
-        id = data['_id']
-        print(data)
-    time.sleep(0.1)
+    #percorre dados da collection
+    for x in collection.find():
+        valor_atual = x['valor_atual']
+        #pega cursor e espera mudança de valor_atual
+        cur = get_cursor(
+            db.sensors, 
+            x['_id'],
+            valor_atual 
+            )
+        for data in cur:
+            valor_atual = data['valor_atual']
+            id = data['_id']
+            #quando mudou
+            print(data)
+        time.sleep(0.1)
 
 
 
