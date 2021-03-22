@@ -18,7 +18,7 @@ data = [{
         "valor_atual": 23,
         "aciona_saida": 1,
         "valor_acionamento":18,
-        "temperatura_ideal":22,
+        "valor_ideal":22,
         "dt_update": datetime.datetime.now()
         }, 
         {
@@ -28,7 +28,7 @@ data = [{
         "valor_atual": 21,
         "aciona_saida": 1,
         "valor_acionamento":18,
-        "temperatura_ideal":22,
+        "valor_ideal":22,
         "dt_update": datetime.datetime.now()
         }]
 
