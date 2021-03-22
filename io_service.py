@@ -10,20 +10,9 @@ db = client.test_database
 
 collection = db.sensors
 
-
-
-def get_cursor(collection, id, valor):
-    options = { 'tailable': True }
-    spec = { 
-        'valor_atual': { '$ne': valor }, # valor diferente do anterior
-        '_id': id }
-
-    options['await_data'] = True
-    cur = collection.find(spec, **options)
-    return cur
-
 values = {}
 for x in collection.find():
+    #seta zerado para passar pela primeira verificacao
     values[x['_id']] =  0 
 
 while True:
