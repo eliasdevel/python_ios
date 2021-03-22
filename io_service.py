@@ -17,7 +17,7 @@ def get_cursor(collection, id, valor):
     spec = { 
         'valor_atual': { '$ne': valor }, # valor diferente do anterior
         '_id': id }
-        
+
     options['await_data'] = True
     cur = collection.find(spec, **options)
     return cur
@@ -32,6 +32,7 @@ while True:
         )
     for data in cur:
         valor_atual = data['valor_atual']
+        id = data['_id']
         print(data)
     time.sleep(0.1)
 
