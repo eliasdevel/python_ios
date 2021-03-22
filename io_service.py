@@ -26,7 +26,7 @@ values = {}
 for x in collection.find():
     values[x['_id']] =  0 
 
-def loop():
+while True:
     #percorre dados da collection
     for id, valor_atual in values.items():        
         #pega cursor e espera mudanca de valor_atual
@@ -39,8 +39,7 @@ def loop():
             values[id] = data['valor_atual']   
             #quando mudou
             print(data)
-    loop()
-loop()
+
 
 
 
