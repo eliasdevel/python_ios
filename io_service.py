@@ -33,10 +33,10 @@ def loop():
         cur = get_cursor(
             db.sensors, 
             id,
-            valor_atual 
+            values[id] 
             )
         for data in cur:
-            values[x['_id']] = data['valor_atual']   
+            values[id] = data['valor_atual']   
             #quando mudou
             print(data)
     loop()
