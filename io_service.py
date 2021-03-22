@@ -39,7 +39,7 @@ while True:
             values[id] = data['valor_atual']   
             #quando mudou
             print(data)
-
+time.sleep(0.2)
 
 
 
