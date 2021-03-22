@@ -22,7 +22,9 @@ while True:
         if(item['valor_atual'] != values[item['_id']]):
             print(item);
             values[item['_id']] = item['valor_atual']
-time.sleep(0.1)
+            #TODO colocar chamada de mudança de valor
+
+time.sleep(1)
 
 
 
