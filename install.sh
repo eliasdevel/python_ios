@@ -4,7 +4,7 @@ apt-get install python
 
 apt-get install python-pip
 
-pip install pymongo==2.4.2
+pip install pymongo
 
 apt-get install mongodb
 
