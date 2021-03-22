@@ -28,12 +28,12 @@ for x in collection.find():
 
 while True:
     #percorre dados da collection
-    for x in collection.find():        
+    for id, valor_atual in values:        
         #pega cursor e espera mudanca de valor_atual
         cur = get_cursor(
             db.sensors, 
-            x['_id'],
-            values[x['_id']] 
+            id,
+            valor_atual 
             )
         for data in cur:
             values[x['_id']] = data['valor_atual']   
