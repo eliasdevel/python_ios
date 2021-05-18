@@ -14,8 +14,8 @@ collection = db.sensors
 data = [{
         "_id": 1,
         "nome": "Sensor de temperatura da cozinha",
-        "id_485": "A",
-        "valor_atual": 23,
+        "id_485": "2",
+        "valor_atual": 22.20,
         "aciona_saida": 1,
         "valor_acionamento":18,
         "valor_ideal":22,
@@ -24,8 +24,8 @@ data = [{
         {
         "_id": 2,
         "nome": "Sensor de temperatura da cozinha",
-        "id_485": "A",
-        "valor_atual": 21,
+        "id_485": "3",
+        "valor_atual": 21.20,
         "aciona_saida": 1,
         "valor_acionamento":18,
         "valor_ideal":22,

@@ -10,7 +10,7 @@ import re
 
 client = MongoClient('localhost', 27017)
 
-db = client.test_database
+db = client.sensors_database
 
 collection = db.sensors
 
@@ -28,7 +28,7 @@ while True:
             values[item['_id']] = item['valor_atual']
             #TODO colocar chamada de mudanca de valor
 
-time.sleep(1)
+    time.sleep(1)
 
 
 
