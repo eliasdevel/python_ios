@@ -23,7 +23,7 @@ while True:
             values[item['_id']] = item['valor_atual']
             #TODO colocar chamada de mudanca de valor
 
-    time.sleep(1)
+time.sleep(1)
 
 
 
