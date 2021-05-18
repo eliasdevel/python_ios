@@ -39,13 +39,22 @@ while True:
             #TODO colocar chamada de mudanca de valor
             if(item['valor_ideal'] < item['valor_acionamento']):
                 print('\n\naquecer\n\n')
+                if(float(item['valor_atual']) <= float(item['valor_acionamento'])):
+                    print('acionando o sensor %d', item['aciona_saida'])
+                    gpio.output(int(item['aciona_saida']), gpio.HIGH)
+                else:
+                    gpio.output(int(item['aciona_saida']), gpio.LOW)
+                    print('desligando sensor %d', item['aciona_saida'])
              
-                
             if(item['valor_ideal'] > item['valor_acionamento']):
                 print('\n\nresfriar\n\n')
                 if(float(item['valor_atual']) >= float(item['valor_acionamento'])):
                     print('acionando o sensor %d', item['aciona_saida'])
-                
+                    gpio.output(int(item['aciona_saida']), gpio.HIGH)
+                else:
+                    gpio.output(int(item['aciona_saida']), gpio.LOW)
+                    print('desligando sensor %d', item['aciona_saida'])
+
 time.sleep(1)
 
 
