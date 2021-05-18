@@ -34,7 +34,7 @@ while True:
     for item in collection.find():
         #quando muda valor      
         if(item['valor_atual'] != values[item['_id']]):
-            print('Mudança de valor detectada')
+            print('Mudanca de valor detectada')
             print(item);
             values[item['_id']] = item['valor_atual'];
             
