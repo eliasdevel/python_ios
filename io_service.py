@@ -38,11 +38,11 @@ while True:
             
             #TODO colocar chamada de mudanca de valor
             if(item['valor_ideal'] < item['valor_acionamento']):
-                print('\n\nresfirar\n\n')
+                print('\n\naquecer\n\n')
                 #resfriar
                 
             if(item['valor_ideal'] > item['valor_acionamento']):
-                print('\n\naquecer\n\n')
+                print('\n\nresfriar\n\n')
                 #aquecer
                 values['s'] =''
 time.sleep(1)
