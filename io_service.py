@@ -37,7 +37,7 @@ while True:
             values[item['_id']] = item['valor_atual'];
             
             
-            if(item['valor_ideal'] < item['valor_acionamento']):
+            if(item['valor_ideal'] > item['valor_acionamento']):
                 print('\n\naquecer\n\n')
                 if(item['valor_atual'] <= item['valor_acionamento']):
                     print('acionando o sensor %d', item['aciona_saida'])
@@ -46,7 +46,7 @@ while True:
                     gpio.output(int(item['aciona_saida']), gpio.LOW)
                     print('desligando sensor %d', item['aciona_saida'])
              
-            if(item['valor_ideal'] > item['valor_acionamento']):
+            if(item['valor_ideal'] < item['valor_acionamento']):
                 print('\n\nresfriar\n\n')
                 if(item['valor_atual'] >= item['valor_acionamento']):
                     print('acionando o sensor %d', item['aciona_saida'])
