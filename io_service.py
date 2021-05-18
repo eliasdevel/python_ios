@@ -19,12 +19,12 @@ for x in collection.find():
 
 def setup():
     gpio.setmode(gpio.BOARD)
-    gpio.setup(5, gpio.OUT)
-    gpio.setup(6, gpio.OUT)
-    gpio.setup(7, gpio.OUT)
-    gpio.setup(8, gpio.OUT)
-    gpio.setup(9, gpio.OUT)
-    gpio.setup(10, gpio.OUT)
+    gpio.setup(11, gpio.OUT)
+    gpio.setup(12, gpio.OUT)
+    gpio.setup(13, gpio.OUT)
+    gpio.setup(14, gpio.OUT)
+    gpio.setup(15, gpio.OUT)
+    gpio.setup(16, gpio.OUT)
 
 
 setup()
