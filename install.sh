@@ -16,3 +16,5 @@ chmod 777 -R /data
 apt-get install mongodb
 
 
+pip install RPi.GPIO
+
