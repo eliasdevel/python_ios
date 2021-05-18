@@ -55,7 +55,7 @@ while True:
                     gpio.output(int(item['aciona_saida']), gpio.LOW)
                     print('desligando sensor %d', item['aciona_saida'])
 
-time.sleep(1)
+    time.sleep(1)
 
 
 
