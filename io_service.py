@@ -43,9 +43,9 @@ while True:
                 
             if(item['valor_ideal'] > item['valor_acionamento']):
                 print('\n\nresfriar\n\n')
-                if(item['valor_atual'] >= item['valor_acionamento']):
+                if(float(item['valor_atual']) >= float(item['valor_acionamento'])):
                     print('acionando o sensor %d', item['aciona_saida'])
-                values['s'] =''
+                
 time.sleep(1)
 
 
