@@ -39,11 +39,12 @@ while True:
             #TODO colocar chamada de mudanca de valor
             if(item['valor_ideal'] < item['valor_acionamento']):
                 print('\n\naquecer\n\n')
-                #resfriar
+             
                 
             if(item['valor_ideal'] > item['valor_acionamento']):
                 print('\n\nresfriar\n\n')
-                #aquecer
+                if(item['valor_atual'] >= item['valor_acionamento']):
+                    print('acionando o sensor %d', item['aciona_saida'])
                 values['s'] =''
 time.sleep(1)
 
