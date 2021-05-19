@@ -32,6 +32,9 @@ while True:
     for item in collection.find():
         #quando muda valor      
         if(item['valor_atual'] != values[item['_id']]):
+            if(len(item['valor_atual']) == 0):
+                item['valor_atual'] = '0';
+             
             print('Mudanca de valor detectada')
             print(item);
             values[item['_id']] = item['valor_atual'];
