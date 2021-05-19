@@ -47,10 +47,8 @@ while True:
                     gpio.output(int(item['aciona_saida']), gpio.HIGH)
                 else:
                     if(float(item['valor_atual']) >= float(item['valor_ideal'])):
-                        gpio.output(int(item['aciona_saida']), gpio.LOW)
                         print('desligando sensor %d', item['aciona_saida'])
-                    else:
-                        print('mantém ligada')
+                        gpio.output(int(item['aciona_saida']), gpio.LOW)   
              
             if(item['valor_ideal'] < item['valor_acionamento']):
                 print('\n\nresfriar\n\n')
@@ -59,8 +57,9 @@ while True:
                     gpio.output(int(item['aciona_saida']), gpio.HIGH)
                 else:
                     if(item['valor_atual'] <= item['valor_ideal']):
-                        gpio.output(int(item['aciona_saida']), gpio.LOW)
                         print('desligando sensor %d', item['aciona_saida'])
+                        gpio.output(int(item['aciona_saida']), gpio.LOW)
+                        
 
     time.sleep(1)
 
