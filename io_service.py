@@ -44,20 +44,26 @@ while True:
                 print('\n\nAquecedor\n\n')
                 if(float(item['valor_atual']) <= float(item['valor_acionamento'])):
                     print('acionando o sensor %d', item['aciona_saida'])
+                    collection.update({'_id':item['_id']}, {'$set': {'valor_saida':'on'}},True)
                     gpio.output(int(item['aciona_saida']), gpio.HIGH)
+                
                 else:
                     if(float(item['valor_atual']) >= float(item['valor_ideal'])):
                         print('desligando sensor %d', item['aciona_saida'])
-                        gpio.output(int(item['aciona_saida']), gpio.LOW)   
+                        collection.update({'_id':item['_id']}, {'$set': {'valor_saida':'off'}},True)
+                        gpio.output(int(item['aciona_saida']), gpio.LOW)
+                        
              
             if(item['valor_ideal'] < item['valor_acionamento']):
                 print('\n\nRefrigerador\n\n')
                 if(item['valor_atual'] >= item['valor_acionamento']  ):
                     print('acionando o sensor %d', item['aciona_saida'])
+                    collection.update({'_id':item['_id']}, {'$set': {'valor_saida':'on'}},True)
                     gpio.output(int(item['aciona_saida']), gpio.HIGH)
                 else:
                     if(item['valor_atual'] <= item['valor_ideal']):
                         print('desligando sensor %d', item['aciona_saida'])
+                        collection.update({'_id':item['_id']}, {'$set': {'valor_saida':'off'}},True)
                         gpio.output(int(item['aciona_saida']), gpio.LOW)
                         
 
